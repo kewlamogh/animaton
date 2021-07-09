@@ -11,6 +11,7 @@ function translateTo(x, y) {
         c.moveTo(x+tx, y+ty);
     }
 }
+
 function drawHuman() {
     c.beginPath();
 
