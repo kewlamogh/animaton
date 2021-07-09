@@ -1,6 +1,7 @@
 .slidercontainer {
     display: inline-flex;
     text-align: center;
+    border: 2px solid black;
 }
 * {
     font-family: 'Yanone Kaffeesatz', sans-serif;
