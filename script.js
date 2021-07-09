@@ -24,16 +24,16 @@ document.onkeydown = function (event) {
     }
 }
 async function jump() {
-    let numFrameUp = prompt('Enter the number of frames he goes up')
-    let upvel = prompt('Enter the up velocity')
-    let downframs = prompt('Enter the number of falling frames')
-    let downvel = prompt('Enter the down velocity');
+    let numFrameUp = parseInt(prompt('Enter the number of frames he goes up'))
+    let upvel = parseInt(prompt('Enter the up velocity'))
+    let downframs = parseInt(prompt('Enter the number of falling frames'))
+    let downvel = parseInt(prompt('Enter the down velocity'));
     for (var i = 0; i <= numFrameUp; i++) {
-        ty -= upvel;
+        ty += upvel;
         await new Promise(resolve => setTimeout(resolve, 10));
     }
     for (var i = 0; i <= downframs; i++) {
-        ty += downvel;
+        ty -= downvel;
         await new Promise(resolve => setTimeout(resolve, 10));
     }
 }
