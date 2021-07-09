@@ -25,7 +25,7 @@ function drawHuman() {
     translateTo(-40, -40);
 
     penUsable = false; //eyes?
-    translateTo(-20, 30); 
+    translateTo(-20, -30); 
     penUsable = true;
     translateTo(-20, 20);
     penUsable = false;
