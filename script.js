@@ -5,10 +5,10 @@ let penUsable = false;
 document.getElementById('c').style.transform = 'rotate(180deg)';
 //oninput, myrange
 document.getElementById('myRange').oninput = function () {
-    tx = this.value / 2;
+    tx = -(this.value / 2);
 }
 document.getElementById('myYRange').oninput = function () {
-    ty = this.value / 2;
+    ty = -(this.value / 2);
 }
 function translateTo(x, y) {
     if (penUsable) {
