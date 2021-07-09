@@ -18,6 +18,26 @@ function translateTo(x, y) {
     }
 }
 
+document.onkeydown = function (event) {
+    if (event.keyCode == 32) {
+        jump();
+    }
+}
+async function jump() {
+    let numFrameUp = prompt('Enter the number of frames he goes up')
+    let upvel = prompt('Enter the up velocity')
+    let downframs = prompt('Enter the number of falling frames')
+    let downvel = prompt('Enter the down velocity');
+    for (var i = 0; i <= numFrameUp; i++) {
+        ty -= upvel;
+        await new Promise(resolve => setTimeout(resolve, 10));
+    }
+    for (var i = 0; i <= downframs; i++) {
+        ty += downvel;
+        await new Promise(resolve => setTimeout(resolve, 10));
+    }
+}
+
 function drawHuman() {
     c.beginPath();
 
