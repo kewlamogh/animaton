@@ -24,12 +24,12 @@ function translateTo(x, y) {
 document.onkeydown = async function (event) {
     if (event.keyCode == 32) {
         jump();
-    } else {
+    } else if (16 == event.keyCode) {
         msg = prompt('Enter speech');
         c.font = "30px Comic Sans MS";
         c.fillStyle = "red";
         c.textAlign = "center";
-        text =true;
+        text = true;
         await new Promise(resolve => setTimeout(resolve, 2000));
         text = false;
     }
