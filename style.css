@@ -1,7 +1,6 @@
 .slidercontainer {
     display: inline-flex;
     text-align: center;
-    font-size: 30px;
 }
 canvas {
     border: 2px solid black;
@@ -10,4 +9,5 @@ canvas {
 * {
     font-family: 'Yanone Kaffeesatz', sans-serif;
     text-align: center;
+    font-size: 30px;
 }
