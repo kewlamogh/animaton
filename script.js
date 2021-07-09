@@ -28,7 +28,6 @@ document.onkeydown = async function (event) {
         msg = prompt('Enter speech');
         c.font = "30px Comic Sans MS";
         c.fillStyle = "red";
-        c.textAlign = "center";
         text = true;
         await new Promise(resolve => setTimeout(resolve, 2000));
         text = false;
@@ -93,9 +92,9 @@ function main() {
     drawHuman();
     if (text) {
         c.save();
-        c.translate(tx + 0, ty + 40);
+        c.translate(tx + 0, ty - 40);
         c.rotate(180);
-        c.fillText(msg, tx + 0, ty + 40);
+        c.fillText(msg, tx + 0, ty - 40);
         c.restore();
     }
     requestAnimationFrame(main);
