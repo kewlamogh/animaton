@@ -3,7 +3,10 @@ let tx = 50;
 let ty = 250;
 let penUsable = false;
 document.getElementById('c').style.transform = 'rotate(180deg)';
-
+//oninput, myrange
+document.getElementById('myRange').oninput = function () {
+    tx = this.value;
+}
 function translateTo(x, y) {
     if (penUsable) {
         c.lineTo(x+tx, y+ty);
