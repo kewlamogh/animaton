@@ -7,6 +7,9 @@ document.getElementById('c').style.transform = 'rotate(180deg)';
 document.getElementById('myRange').oninput = function () {
     tx = this.value / 2;
 }
+document.getElementById('myYRange').oninput = function () {
+    ty = this.value / 2;
+}
 function translateTo(x, y) {
     if (penUsable) {
         c.lineTo(x+tx, y+ty);
