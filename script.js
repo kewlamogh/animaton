@@ -1,7 +1,9 @@
 let c = document.getElementById('c').getContext('2d');
-let tx = 0;
-let ty = 0;
+let tx = 50;
+let ty = 250;
 let penUsable = false;
+document.getElementById('c').style.transform = 'rotate(180deg)';
+
 function translateTo(x, y) {
     if (penUsable) {
         c.lineTo(x+tx, y+ty);
