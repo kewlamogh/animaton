@@ -1,7 +1,6 @@
 let c = document.getElementById('c').getContext('2d');
 let tx = 50;
 let ty = 250;
-let text = 0;
 let penUsable = false;
 let msg;
 let text = false;
