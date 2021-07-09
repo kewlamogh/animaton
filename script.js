@@ -1,7 +1,11 @@
 let c = document.getElementById('c').getContext('2d');
 let tx = 50;
 let ty = 250;
+let text = 0;
 let penUsable = false;
+let msg;
+let text = false;
+
 document.getElementById('c').style.transform = 'rotate(180deg)';
 //oninput, myrange
 document.getElementById('myRange').oninput = function () {
@@ -18,9 +22,17 @@ function translateTo(x, y) {
     }
 }
 
-document.onkeydown = function (event) {
+document.onkeydown = async function (event) {
     if (event.keyCode == 32) {
         jump();
+    } else {
+        msg = prompt('Enter speech');
+        c.font = "30px Comic Sans MS";
+        c.fillStyle = "red";
+        c.textAlign = "center";
+        text =true;
+        await new Promise(resolve => setTimeout(resolve, 2000));
+        text = false;
     }
 }
 async function jump() {
@@ -80,6 +92,9 @@ function drawHuman() {
 }
 function main() {
     drawHuman();
+    if (text) {
+        c.fillText(msg, tx + 0, ty + 40);
+    }
     requestAnimationFrame(main);
 }
 main();
