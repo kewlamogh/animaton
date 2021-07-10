@@ -89,11 +89,7 @@ function drawHuman() {
 function main() {
     drawHuman();
     if (text) {
-        c.save();
-        c.translate(tx + 0, ty - 40);
-        c.rotate(180);
         c.fillText(msg, tx + 0, ty - 40);
-        c.restore();
     }
     requestAnimationFrame(main);
 }
