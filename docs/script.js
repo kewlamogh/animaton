@@ -90,8 +90,11 @@ function drawHuman() {
 function main() {
     drawHuman();
     if (text) {
-        c.textSize = '30px';
-        c.fillText(msg, tx + 0, ty + 50);
+        c.save();
+        c.translate(tx, ty + 40);
+        c.rotate(180);
+        c.fillText(msg);
+        c.restore();
     }
     requestAnimationFrame(main);
 }
