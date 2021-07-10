@@ -21,7 +21,6 @@ function translateTo(x, y) {
         c.moveTo(x+tx, y+ty);
     }
 }
-
 document.onkeydown = async function (event) {
     if (event.keyCode == 32) {
         jump();
@@ -46,55 +45,48 @@ async function jump() {
         await new Promise(resolve => setTimeout(resolve, 10));
     }
 }
-
+function pen(state) {
+    penUsable = (state == 'down');
+}
 function drawHuman() {
     c.beginPath();
-
     c.clearRect(0, 0, 1500, 500);
-
-    penUsable = false; //drawing head
+    pen('up'); //drawing head
     translateTo(-40,-40);
-    penUsable = true;
+    pen('down');
     translateTo(40, -40);
     translateTo(40, 40);
     translateTo(-40, 40);
     translateTo(-40, -40);
-
-    penUsable = false; //eyes?
+    pen('up'); //eyes?
     translateTo(-20, -30); 
-    penUsable = true;
+    pen('down');
     translateTo(-20, 20);
-    penUsable = false;
+    pen('up');
     translateTo(20, -30);
-    penUsable = true;
+    pen('down');
     translateTo(20, 20);
-    
-    penUsable = false;//chest
+    pen('up');//chest
     translateTo(-4, -40);
-    penUsable = true;
+    pen('down');
     translateTo(-4, -150);
     translateTo(-40, -200);
     translateTo(-4, -150);
     translateTo(40,-200);
-    penUsable = false;
+    pen('up');
     translateTo(-4, -40);
-    penUsable = true;
+    pen('down');
     translateTo(40, -120);
-    penUsable = false;
+    pen('up');
     translateTo(-4, -40);
-    penUsable = true;
+    pen('down');
     translateTo(-40, -120);
-
     c.stroke();
 }
 function main() {
     drawHuman();
     if (text) {
-        c.save();
-        c.translate(tx, ty + 40);
-        c.rotate(100);
         c.fillText(msg, tx, ty + 40);
-        c.restore();
     }
     requestAnimationFrame(main);
 }
