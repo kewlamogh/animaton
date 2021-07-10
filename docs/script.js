@@ -24,6 +24,11 @@ function translateTo(x, y) {
 document.onkeydown = async function (event) {
     if (event.keyCode == 32) {
         jump();
+    } else {
+        msg = prompt('Enter text');
+        text = true;
+        await new Promise(resolve => setTimeout(resolve, 2000));
+        text = false;
     }
 }
 async function jump() {
