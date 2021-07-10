@@ -92,7 +92,7 @@ function main() {
     if (text) {
         c.save();
         c.translate(tx, ty + 40);
-        c.rotate(180);
+        c.rotate(100);
         c.fillText(msg, tx, ty + 40);
         c.restore();
     }
