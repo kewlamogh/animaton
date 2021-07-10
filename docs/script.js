@@ -89,7 +89,8 @@ function drawHuman() {
 function main() {
     drawHuman();
     if (text) {
-        c.fillText(msg, tx + 0, ty - 40);
+        c.textSize = '30px';
+        c.fillText(msg, tx + 0, ty);
     }
     requestAnimationFrame(main);
 }
