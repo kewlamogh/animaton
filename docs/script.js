@@ -3,6 +3,7 @@ let tx = 50;
 let ty = 250;
 let penUsable = false;
 let msg;
+c.font = "30px Arial";
 let text = false;
 
 document.getElementById('c').style.transform = 'rotate(180deg)';
