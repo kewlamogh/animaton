@@ -93,7 +93,7 @@ function main() {
         c.save();
         c.translate(tx, ty + 40);
         c.rotate(180);
-        c.fillText(msg);
+        c.fillText(msg, tx, ty + 40);
         c.restore();
     }
     requestAnimationFrame(main);
